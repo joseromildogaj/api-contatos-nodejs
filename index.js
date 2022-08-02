@@ -5,8 +5,9 @@ const porta = process.env.PORT || 3000;
 
 app.use(express.json());
 
-let contatos = [
 
+let contatos = [
+    /*
     {
         "id": 1,
         "nome": "Fulano",
@@ -25,13 +26,13 @@ let contatos = [
         "fone": "33333333333",
         "email": "beltrano@email.com"
     }
-]
+    */
+];
 
-/*
-app.get('/home', (req, res) => {
-    console.log('Página home');
-})
-*/
+
+app.get('/contatos', (req, res) => {
+    res.status(200).json(contatos);
+});
 
 
 app.listen(porta, () => {
