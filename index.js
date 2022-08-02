@@ -56,6 +56,18 @@ app.post('/contatos', (req, res) => {
 });
 
 
+// [PUT] /contatos/id - atualiza contato pelo id
+app.put('/contatos/:id', (req, res) => {
+    const indice = contatos.findIndex(item => item.id == req.params.id);
+    if (indice == -1) {
+        return res.status(404).send({});
+    }
+    const contato = req.body;
+    contatos[indice] = contato;
+    return res.status(200).json(contato);
+});
+
+
 app.listen(porta, () => {
     console.log(`Servidor rodando na porta ${porta}`)
 });
