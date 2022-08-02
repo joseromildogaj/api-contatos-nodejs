@@ -68,6 +68,17 @@ app.put('/contatos/:id', (req, res) => {
 });
 
 
+// [DELETE] /contatos/id - remove contato pelo id
+app.delete('/contatos/:id', (req, res) => {
+    const indice = contatos.findIndex(item => item.id == req.params.id);
+    if (indice == -1) {
+        return res.status(404).json({});
+    }
+    contatos.splice(indice, 1);
+    return res.status(204).end();
+});
+
+
 app.listen(porta, () => {
     console.log(`Servidor rodando na porta ${porta}`)
 });
