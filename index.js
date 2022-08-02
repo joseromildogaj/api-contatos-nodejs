@@ -5,6 +5,7 @@ const porta = process.env.PORT || 3000;
 
 app.use(express.json());
 
+let ind = 4;
 
 let contatos = [
     
@@ -42,6 +43,16 @@ app.get('/contatos/:id', (req, res) => {
         return res.status(404).json({});
     }
     return res.status(200).json(contatos[indice]);
+});
+
+
+// [post] /contatos - salva um contato
+app.post('/contatos', (req, res) => {
+    const {nome, fone, email} = req.body;
+    const id = ind++;
+    const contato = {id, nome, fone, email};
+    contatos.push(contato);
+    return res.status(201).json(contato);
 });
 
 
