@@ -7,7 +7,7 @@ app.use(express.json());
 
 
 let contatos = [
-    /*
+    
     {
         "id": 1,
         "nome": "Fulano",
@@ -26,7 +26,7 @@ let contatos = [
         "fone": "33333333333",
         "email": "beltrano@email.com"
     }
-    */
+    
 ];
 
 
