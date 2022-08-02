@@ -1,5 +1,4 @@
 # Agenda de Contatos
-#
 
 ### Sobre
 ```sh
